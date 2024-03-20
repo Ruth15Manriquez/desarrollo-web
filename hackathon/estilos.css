@@ -1,0 +1,31 @@
+titulo {
+   font-size: 120px;
+   font-family: Osvaldo
+}
+img {
+    width: 50px;
+    height: 50px;
+}
+.carta{
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+.card{
+    margin-right: 5%;
+    margin-left: 15%;
+    text-align: center;
+}
+
+.card-title, .card-text{
+    color: rgb(105, 105, 105);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+
+}
+
+
+.card-img-top{
+    margin-top: 13px;
+}

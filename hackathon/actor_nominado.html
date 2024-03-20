@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Cards Per Row</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    .card {
+        width: calc(33.33% - 20px);
+        margin: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        display: inline-block;
+        vertical-align: top;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 10px;
+        border-radius: 5px;
+    }
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .card p {
+        font-size: 14px;
+        color: #555;
+    }
+    @media (max-width: 768px) {
+        .card {
+            width: calc(50% - 20px);
+        }
+    }
+    @media (max-width: 480px) {
+        .card {
+            width: calc(100% - 20px);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Title 1</h2>
+    <img src="https://via.placeholder.com/150" alt="Image 1">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+
+<div class="card">
+    <h2>Title 2</h2>
+    <img src="https://via.placeholder.com/150" alt="Image 2">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+
+<div class="card">
+    <h2>Title 3</h2>
+    <img src="https://via.placeholder.com/150" alt="Image 3">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</body>
+</html>
