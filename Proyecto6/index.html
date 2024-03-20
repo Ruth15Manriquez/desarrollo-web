@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Arreglos </h1>
+    
+
+
+    
+    <p id="lista1"></p> 
+    <p id="lista2"></p>
+    <p id="lista3"></p>
+    <p id="lista4"></p>
+    <p id="lista5"></p>
+    <p id="lista6"></p>
+    <p id="lista7"></p>
+    <p id="lista8"></p>
+
+
+
+    <script>   
+    
+    
+    /*forma 1 p#lista${}*8    o    p#lista$*8       el # es para id   */
+
+
+       const fruit = ['apple', 'banana', 'orange', 'strawberry'];
+        let size = fruit.length;
+        console.log(size);
+
+        for (let i = 0; i < size; i++) {
+            console.log(fruit[i]);
+        }
+
+        let lista1 = document.getElementById('lista1');
+        lista1.innerHTML = fruit.toString();
+        console.log("La fruta es: ",fruit);
+        console.warn("La fruta es: ",fruit);
+        console.error("La fruta es: ",fruit);
+        console.info("La fruta es: ",fruit);
+        console.table(fruit);
+        console.debug("La fruta es: ",fruit);
+
+        let lista2 = document.getElementById('lista2'); //arreglo normal
+        lista2.innerHTML = fruit.join(' - ');      // el .join separa los elementos con un guion  
+
+
+        // Eliminar un elemento del arreglo
+
+        let lista3 = document.getElementById('lista3');
+        fruit.pop(); // Elimina el último elemento del arreglo
+        fruit.pop(); // Elimina el último elemento del arreglo
+        lista3.innerHTML = fruit.join(' - ');
+
+
+        //Agregar un elemnto al final del arreglo
+        let lista4 = document.getElementById('lista4');
+        fruit.push('grape'); // Agrega un elemento al final del arreglo
+        fruit.push('kiwi'); // Agrega un elemento al final del arreglo
+        lista4.innerHTML = fruit.join(' ----- ');
+
+        //Shift elimina el primer elemento del arreglo
+        let lista5 = document.getElementById('lista5');
+        fruit.shift(); // Elimina el primer elemento del arreglo
+        lista5.innerHTML = "Lista 5 " + fruit.join(' - ');
+
+        //Unshift agrega un elemento al inicio del arreglo
+        let lista6 = document.getElementById('lista6');
+        fruit.unshift('grape'); // Agrega un elemento al inicio del arreglo
+        lista6.innerHTML = "Lista 6 " + fruit.join(' - ');
+        
+        //Slice agrega o elimina elementos de un arreglo
+        
+
+        //Declaracion de dos arreglos
+        const nombresMujeres = ['Ana', 'Maria', 'Laura', 'Sofia'];
+        const nombresHombres = ['Juan', 'Pedro', 'Luis', 'Carlos'];
+
+        //Unir los dos arreglos en uno, 
+        const listaNomres = nombresMujeres.concat(nombresHombres); // primero pone los elementos del primer arreglo luego el que esta entre parentesis
+        let lista7 = document.getElementById('lista7');
+        lista7.innerHTML = "Lista 7 " + listaNomres.join(' - ');
+
+
+
+    </script>
+</body>
+</html>
