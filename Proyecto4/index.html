@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto 4</title>
+    <title>practica 4</title>
 </head>
 <body>
     
@@ -22,28 +22,32 @@
         }
         console.log("Area de un circulo con radio 5: "+calcularAreaCirculo(5));
 
-       
+        //undefined : no existe
+        //null: esta definido pero no tiene valor (null es un objeto)
+
         function toCelsius(fahrenheit){
             return (5/9)*(fahrenheit-32);
         }
         console.log("Temperatura: "+toCelsius(77));
 
+        //Definir un objeto
         const carro={
             tipo: "Tesla",
             modelo: "Model 3",
             color: "Rojo",
         }
-       
+        //typeof : devuelve el tipo de dato. Arreglos, nulo y objetos son de tipo objeto
         console.log("Tipo: ", typeof carro);
         console.log(carro.modelo);
-        console.log(carro["modelo"]); 
+        console.log(carro["modelo"]); //tambien se pueden mostrar los atributos de un objeto como si fuera un arreglo
+
         let saludo;
         console.log(saludo);
 
 
         let hora= new Date().getHours();
         console.log(hora);
-      
+        //una vez creada la variable no la tienes que volver a declarar
         hora=10;
         if(hora<12){
             console.log("Es dia");
@@ -84,11 +88,14 @@
 
         let j=500;
         for(let j=10; j<=20; j++){
-             console.log(j);
+            //Dentro del for esta variable j es unica, no esta relacionada con la de afuera
+            console.log(j);
 
         }
+        //Revisar variables dentro y fuera de un for, si se quiere modificar una variable dentro de un for NO se declara solo se menciona
         console.log("Valor de j fuera del ciclo for" +j);
 
+        // for para objetos
         let persona={
             nombre: "Juan",
             apellido: "Perez",
