@@ -85,7 +85,6 @@ formulario.addEventListener('submit', function(e) {
 
 borrarTarea();
 */
-document.addEventListener('DOMContentLoaded', function() {
     let formulario = document.getElementById('formulario');
     let formularioEditar = document.getElementById('formularioEditar');
     let nombre = document.getElementById('nombre');
@@ -101,25 +100,25 @@ document.addEventListener('DOMContentLoaded', function() {
  
     let tareas = [
         {   
-            nombre : "Tarea 1" ,
-            fecha : "2023-12-31",
-            descripcion : "Tarea1",
+            nombre : "Ruth Manríquez" ,
+            fecha : "2004-09-17",
+            descripcion : "Tarea 1",
             imagen : "https://coosol.es/wp-content/uploads/2023/09/Coosol-blog-Tipos-de-girasoles-01-800x500-1.webp",
             audio : "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
             video : "file_example_MP4_640_3MG.mp4"
         },
         {   
-            nombre : "Tarea 2" ,
-            fecha : "2024-10-21",
-            descripcion : "Tarea2",
+            nombre : "Fatima Manriquez" ,
+            fecha : "2010-09-15",
+            descripcion : "Tarea 2",
             imagen : "https://coosol.es/wp-content/uploads/2023/09/Coosol-blog-Tipos-de-girasoles-01-800x500-1.webp",
             audio : "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-            video : "file_example_MP4_640_3MG.mp4"
+            video : "59483-493557880_small.mp4"
         },
         {
-            nombre : "Tarea 3" ,
-            fecha : "2025-12-27",
-            descripcion : "Tarea3",
+            nombre : "Ethan Lemus" ,
+            fecha : "2004-03-05",
+            descripcion : "Tarea 3",
             imagen : "https://coosol.es/wp-content/uploads/2023/09/Coosol-blog-Tipos-de-girasoles-01-800x500-1.webp",
             audio : "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
             video : "file_example_MP4_640_3MG.mp4"
@@ -135,29 +134,32 @@ document.addEventListener('DOMContentLoaded', function() {
         tareas.forEach((tarea, indice) => {
             listaTareas.innerHTML += `
             <div class='row'>
-                <div class='col-4 border p-3'>
+                <div class='col-2 border p-3'>
                     <strong>${tarea.nombre}</strong>
                 </div>
-                <div class='col-4 border p-3'>
+                <div class='col-1 border p-3'>
                     <strong>${tarea.fecha}</strong>
                 </div>
-                <div class='col-4 border p-3'>
-                    <img src="${tarea.imagen}" alt="Imagen tarea" class="img-fluid">
+                <div class='col-1 border p-3'>
+                    <strong>${tarea.descripcion}</strong>
                 </div>
-                <div class='col-4 border p-3'>
-                    <audio controls>
+                <div class='col-2 border p-3'>
+                    <img src="${tarea.imagen}" alt="Flor" class="img-fluid">
+                </div>
+                <div class='col-2 border p-3'>
+                    <audio controls style="width: 100%;">
                         <source src="${tarea.audio}" type="audio/mpeg">
                     </audio>
                 </div>
-                <div class='col-4 border p-3'>
-                    <video width="320" height="240" controls>
+                <div class='col-2 border p-3'>
+                    <video class="img-fluid" controls>
                         <source src="${tarea.video}" type="video/mp4">
                     </video>
                 </div>
-                <div class='col-2 border p-3 text-center'>
+                <div class='col-1 border p-3 text-center'>
                     <button class='btn btn-success' data-bs-toggle="modal" data-bs-target="#editarTarea" onclick="editarTarea(${indice})">Editar</button>
                 </div>
-                <div class='col-2 border p-3 text-center'>
+                <div class='col-1 border p-3 text-center'>
                     <button class='btn btn-danger' onClick="borrarTarea(${indice})">Borrar</button>
                 </div>
             </div>
@@ -167,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mostrarTareas();
  
-    window.editarTarea = function(indice) {
+    let editarTarea = (indice) => {
         nombreEditar.value = tareas[indice].nombre;
         fechaEditar.value = tareas[indice].fecha;
         descripcionEditar.value = tareas[indice].descripcion;
@@ -177,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         idTarea.value = indice;
     }
  
-    formularioEditar.addEventListener("submit", function(e) {
+    formularioEditar.addEventListener("submit", (e)=>{
         e.preventDefault();
         let indice = idTarea.value;
         tareas[indice].nombre = nombreEditar.value;
@@ -190,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cerrarModalEditar();
     });
  
-    function agregarDatos() {
+    let agregarDatos = () => {
         let datos = {
             nombre: nombre.value,
             fecha: fecha.value,
@@ -203,19 +205,21 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarTareas();
     }
     
-    function cerrarModal() {
+    let cerrarModal = () => {
         btnGuardar.setAttribute("data-bs-dismiss", "modal");
         btnGuardar.click();
     }
  
-    function cerrarModalEditar() {
+    let cerrarModalEditar = () => {
         btnGuardarEditar.setAttribute("data-bs-dismiss", "modal");
         btnGuardarEditar.click();
     }
  
-    window.borrarTarea = function(indice) {
+    let borrarTarea = (indice) => {
         tareas.splice(indice,1);
+        console.log(tareas);
         mostrarTareas();
+
     }
  
     formulario.addEventListener('submit', function(event) {
@@ -224,4 +228,4 @@ document.addEventListener('DOMContentLoaded', function() {
         cerrarModal();
         formulario.reset();
     });
-});
+
